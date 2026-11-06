@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiendas Socias | Callejeritos San Jerónimo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Animación de Nieve Navideña -->
+  <div class="snow-container" id="snowContainer"></div>
+
+  <main class="form-wrapper">
+    
+    <!-- Encabezado -->
+    <header class="header">
+      <div class="logo-container">
+        <img src="assets/img/logo.png" alt="Logo Callejeritos San Jerónimo" class="logo-img">
+      </div>
+      <span class="badge">❄️ Campaña Navideña 🐾</span>
+      <h1>¡BUSCAMOS TIENDAS SOCIAS!</h1>
+      <p class="subtitle">Súmate como punto de venta oficial del <strong>Panetón con Quinua</strong> y ayúdanos a alimentar a nuestros perritos rescatados.</p>
+    </header>
+
+    <!-- Beneficios -->
+    <section class="benefits-card">
+      <h2>🎄 Beneficios por unirte:</h2>
+      <ul>
+        <li>🐶 Recauda fondos para alimentar a perritos rescatados.</li>
+        <li>💰 Obtén un excelente margen de ganancias.</li>
+        <li>📣 Publicidad gratuita para tu tienda en nuestras redes sociales.</li>
+      </ul>
+    </section>
+
+    <!-- Formulario Interactivo -->
+    <form id="storeForm" class="card-form" novalidate>
+      <div class="form-header">
+        <h3>Formulario de Inscripción</h3>
+        <p>Todos los campos marcados con <span>*</span> son obligatorios</p>
+      </div>
+
+      <!-- Campo 1: Nombre del negocio -->
+      <div class="field-group">
+        <label for="storeName">Nombre de la Tienda / Negocio <span>*</span></label>
+        <input type="text" id="storeName" placeholder="Ej. Bodega San Fernando" required>
+        <small class="error-msg">⚠️ Por favor completa el nombre de tu negocio.</small>
+      </div>
+
+      <!-- Campo 2: Representante -->
+      <div class="field-group">
+        <label for="ownerName">Nombre del Representante <span>*</span></label>
+        <input type="text" id="ownerName" placeholder="Ej. Juan Pérez" required>
+        <small class="error-msg">⚠️ Por favor completa tu nombre.</small>
+      </div>
+
+      <!-- Campo 3: Teléfono (Solo números y máximo 9 dígitos) -->
+      <div class="field-group">
+        <label for="phone">Teléfono / WhatsApp <span>*</span></label>
+        <input 
+          type="tel" 
+          id="phone" 
+          placeholder="Ej. 914107757" 
+          maxlength="9"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          required
+        >
+        <small class="error-msg" id="phoneError">⚠️ Ingresa un número de celular válido de 9 dígitos.</small>
+      </div>
+
+      <!-- Campo 4: Dirección -->
+      <div class="field-group">
+        <label for="address">Dirección o alguna referencia <span>*</span></label>
+        <input type="text" id="address" placeholder="Ej. Av. De la Cultura 123, San Jerónimo" required>
+        <small class="error-msg">⚠️ Por favor indica la dirección de tu negocio.</small>
+      </div>
+
+      <button type="submit" id="btnSubmit" class="btn-primary">
+        <span id="btnText">🐾 Unirme y Enviar por WhatsApp</span>
+      </button>
+    </form>
+
+    <footer class="footer-note">
+      <p>Callejeritos San Jerónimo • Campaña Navideña 🎁</p>
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

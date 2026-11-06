@@ -1,0 +1,287 @@
+:root {
+  --bg-color: #FAF6ED;
+  --card-bg: #FFFFFF;
+  --primary-red: #D93829;
+  --primary-red-hover: #b82b1d;
+  --secondary-green: #2F5D37;
+  --accent-gold: #E5A93B;
+  --text-brown: #3A2E2B;
+  --text-muted: #6B5C57;
+  --border-light: #EBE0D0;
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --shadow: 0 16px 40px rgba(58, 46, 43, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-brown);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efecto de Nieve Caída */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: #E5A93B;
+  opacity: 0.6;
+  font-size: 1rem;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to {
+    transform: translateY(105vh) rotate(360deg);
+  }
+}
+
+/* Estructura Responsiva (Móvil y Escritorio) */
+.form-wrapper {
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Encabezado e Interacción de Logo */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 3px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.06) rotate(3deg);
+}
+
+.logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #E8F2EA;
+  color: var(--secondary-green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid #cce3d1;
+}
+
+.header h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--primary-red);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Tarjeta de Beneficios */
+.benefits-card {
+  background-color: #F4EFE2;
+  border-left: 5px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease;
+}
+
+.benefits-card:hover {
+  transform: translateY(-2px);
+}
+
+.benefits-card h2 {
+  font-size: 1rem;
+  color: var(--secondary-green);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.benefits-card ul {
+  list-style: none;
+}
+
+.benefits-card li {
+  font-size: 0.88rem;
+  color: var(--text-brown);
+  margin-bottom: 6px;
+}
+
+/* Tarjeta de Formulario */
+.card-form {
+  background: var(--card-bg);
+  padding: 30px 25px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-light);
+}
+
+.form-header {
+  margin-bottom: 22px;
+}
+
+.form-header h3 {
+  font-size: 1.2rem;
+  color: var(--secondary-green);
+  font-weight: 700;
+}
+
+.form-header p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.form-header p span {
+  color: var(--primary-red);
+  font-weight: bold;
+}
+
+.field-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-brown);
+  margin-bottom: 6px;
+}
+
+.field-group label span {
+  color: var(--primary-red);
+}
+
+.field-group input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background-color: #FAF9F6;
+  color: var(--text-brown);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.field-group input:focus {
+  border-color: var(--secondary-green);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(47, 93, 55, 0.12);
+}
+
+.field-group.invalid input {
+  border-color: var(--primary-red);
+  background-color: #FFF8F8;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.error-msg {
+  color: var(--primary-red);
+  font-size: 0.78rem;
+  margin-top: 5px;
+  display: none;
+  font-weight: 500;
+}
+
+.field-group.invalid .error-msg {
+  display: block;
+}
+
+/* Botón Principal */
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--primary-red);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 10px;
+  box-shadow: 0 6px 16px rgba(217, 56, 41, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 56, 41, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Media Query para Smartphones */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+  .card-form {
+    padding: 20px 16px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
